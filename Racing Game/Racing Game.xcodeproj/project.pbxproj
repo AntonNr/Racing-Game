@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD4D9EEF28B4251A00A3D850 /* RubikDirt-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD4D9EEE28B4251A00A3D850 /* RubikDirt-Regular.ttf */; };
 		FDB2888128214E5300E94824 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2888028214E5300E94824 /* AppDelegate.swift */; };
 		FDB2888328214E5300E94824 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2888228214E5300E94824 /* SceneDelegate.swift */; };
 		FDB2888528214E5300E94824 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2888428214E5300E94824 /* MainMenu.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD4D9EEE28B4251A00A3D850 /* RubikDirt-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RubikDirt-Regular.ttf"; sourceTree = "<group>"; };
 		FDB2887D28214E5300E94824 /* Racing Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Racing Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDB2888028214E5300E94824 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDB2888228214E5300E94824 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD4D9EEB28B4201800A3D850 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FD4D9EEE28B4251A00A3D850 /* RubikDirt-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		FDB2887428214E5300E94824 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +72,7 @@
 		FDB2887F28214E5300E94824 /* Racing Game */ = {
 			isa = PBXGroup;
 			children = (
+				FD4D9EEB28B4201800A3D850 /* Fonts */,
 				FDB2888028214E5300E94824 /* AppDelegate.swift */,
 				FDB2888228214E5300E94824 /* SceneDelegate.swift */,
 				FDB2888428214E5300E94824 /* MainMenu.swift */,
@@ -134,6 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD4D9EEF28B4251A00A3D850 /* RubikDirt-Regular.ttf in Resources */,
 				FDB2888D28214E5500E94824 /* LaunchScreen.storyboard in Resources */,
 				FDB2888A28214E5500E94824 /* Assets.xcassets in Resources */,
 				FDB2888828214E5300E94824 /* Main.storyboard in Resources */,

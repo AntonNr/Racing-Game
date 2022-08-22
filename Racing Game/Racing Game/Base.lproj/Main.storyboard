@@ -16,10 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Race Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh8-BZ-Qxo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh8-BZ-Qxo">
                                 <rect key="frame" x="132.5" y="163" width="149" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Race Game">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="30"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Niz-Ii-RhP">
@@ -66,7 +72,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Niz-Ii-RhP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CC9-KN-5xl"/>
-                            <constraint firstItem="dh8-BZ-Qxo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="132.66999999999999" id="CL8-z4-kQp"/>
+                            <constraint firstItem="dh8-BZ-Qxo" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="132.66999999999999" id="CL8-z4-kQp"/>
                             <constraint firstItem="dh8-BZ-Qxo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="ESf-SD-C7C"/>
                             <constraint firstItem="Niz-Ii-RhP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="G7m-tG-V1f"/>
                             <constraint firstItem="G7B-sb-VAc" firstAttribute="top" secondItem="Niz-Ii-RhP" secondAttribute="bottom" constant="30" id="Xac-Pv-B93"/>
@@ -79,6 +85,7 @@
                     <navigationItem key="navigationItem" id="XK2-lg-kYN"/>
                     <connections>
                         <outlet property="highscoresButton" destination="G7B-sb-VAc" id="F06-Tq-h5u"/>
+                        <outlet property="mainLabel" destination="dh8-BZ-Qxo" id="Kiv-9f-ebE"/>
                         <outlet property="settingsButton" destination="4Xp-w5-3jh" id="C1A-9C-skZ"/>
                         <outlet property="startButton" destination="Niz-Ii-RhP" id="Irc-kB-H7z"/>
                     </connections>

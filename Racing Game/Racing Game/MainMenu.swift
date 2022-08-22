@@ -2,6 +2,7 @@ import UIKit
 
 class MainMenu: UIViewController {
 
+    @IBOutlet var mainLabel: UILabel!
     @IBOutlet var startButton: UIButton!
     @IBOutlet var highscoresButton: UIButton!
     @IBOutlet var settingsButton: UIButton!
@@ -9,6 +10,11 @@ class MainMenu: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let attributed: [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor : UIColor.red, NSAttributedString.Key.font : UIFont(name: "RubikDirt-Regular", size: 40)]
+        let attrString = NSAttributedString(string: "Race Game", attributes: attributed)
+        mainLabel.attributedText = attrString
+        
         startButton.cornerRadius(radius: 20)
         startButton.drawShadow()
         

@@ -82,15 +82,13 @@ class RaceGame: UIViewController {
     }
 
     @objc func moveRoad() {
-        let height = UIScreen.main.bounds.height - 1
-        
         road1.image = UIImage(named: "Road2")
         road1.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         road1.layer.zPosition = -2
         self.view.addSubview(road1)
         
         road2.image = UIImage(named: "Road2")
-        road2.frame = CGRect(x: 0, y: (-1) * height, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        road2.frame = CGRect(x: 0, y: -896, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         road2.layer.zPosition = -2
         self.view.addSubview(road2)
         
@@ -98,15 +96,15 @@ class RaceGame: UIViewController {
             var currentCenterRoad2 = self.road2.center
             currentCenterRoad2.y += 2
             self.road2.center = currentCenterRoad2
-            if self.road2.frame.origin.y >= height {
-                self.road2.frame.origin.y = (-1) * height
+            if self.road2.frame.origin.y == 896 {
+                self.road2.frame.origin.y = -896
             }
             
             var currentCenterRoad1 = self.road1.center
             currentCenterRoad1.y += 2
             self.road1.center = currentCenterRoad1
-            if self.road1.frame.origin.y >= height {
-                self.road1.frame.origin.y = (-1) * height
+            if self.road1.frame.origin.y == 896 {
+                self.road1.frame.origin.y = -896
             }
         }
         
