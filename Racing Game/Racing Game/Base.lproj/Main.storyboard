@@ -77,6 +77,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XK2-lg-kYN"/>
+                    <connections>
+                        <outlet property="highscoresButton" destination="G7B-sb-VAc" id="F06-Tq-h5u"/>
+                        <outlet property="settingsButton" destination="4Xp-w5-3jh" id="C1A-9C-skZ"/>
+                        <outlet property="startButton" destination="Niz-Ii-RhP" id="Irc-kB-H7z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

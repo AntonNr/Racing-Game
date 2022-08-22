@@ -2,9 +2,21 @@ import UIKit
 
 class MainMenu: UIViewController {
 
+    @IBOutlet var startButton: UIButton!
+    @IBOutlet var highscoresButton: UIButton!
+    @IBOutlet var settingsButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        startButton.cornerRadius(radius: 20)
+        startButton.drawShadow()
+        
+        highscoresButton.cornerRadius(radius: 20)
+        highscoresButton.drawShadow()
+        
+        settingsButton.cornerRadius(radius: 20)
+        settingsButton.drawShadow()
     }
 
     @IBAction func didTapStart(){
@@ -38,3 +50,17 @@ class MainMenu: UIViewController {
     }
 }
 
+extension UIButton {
+    func cornerRadius(radius: Int) {
+        self.layer.cornerRadius = CGFloat(radius)
+        self.clipsToBounds = true
+    }
+    
+    func drawShadow() {
+        layer.masksToBounds = true
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.5
+        layer.shadowOffset = CGSize(width: -1, height: 1)
+        layer.shadowRadius = 20
+    }
+}

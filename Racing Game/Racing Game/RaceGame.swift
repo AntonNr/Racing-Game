@@ -23,10 +23,9 @@ class RaceGame: UIViewController {
         rightArrowButton.addTarget(self, action: #selector(didTapToMoveRight), for: .touchUpInside)
         view.addSubview(rightArrowButton)
         
-        let leftArrowImage = UIImage(named: "RightArrow")
+        let leftArrowImage = UIImage(named: "LeftArrow")
         let leftArrowButton = UIButton(frame: CGRect(x: UIScreen.main.bounds.width / 2 - 145, y: UIScreen.main.bounds.height - 140, width: 100, height: 100))
         leftArrowButton.setImage(leftArrowImage, for: .normal)
-        leftArrowButton.transform = leftArrowButton.transform.rotated(by: CGFloat(Double.pi))
         leftArrowButton.addTarget(self, action: #selector(didTapToMoveLeft), for: .touchUpInside)
         view.addSubview(leftArrowButton)
         
@@ -50,6 +49,7 @@ class RaceGame: UIViewController {
         
         bush.image = UIImage(named: "Bush")
         bush.frame = CGRect(x: randomPositionOfBush, y: -128, width: 150, height: 150)
+        bush.layer.zPosition = -1
         self.view.addSubview(bush)
         
         timerToCompare = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true, block: {
@@ -82,34 +82,34 @@ class RaceGame: UIViewController {
     }
 
     @objc func moveRoad() {
-        road1.image = UIImage(named: "Road")
+        let height = UIScreen.main.bounds.height - 1
+        
+        road1.image = UIImage(named: "Road2")
         road1.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        road1.layer.zPosition = -1
+        road1.layer.zPosition = -2
         self.view.addSubview(road1)
         
-        road2.image = UIImage(named: "Road")
-        road2.frame = CGRect(x: 0, y: -896, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        road2.layer.zPosition = -1
+        road2.image = UIImage(named: "Road2")
+        road2.frame = CGRect(x: 0, y: (-1) * height, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        road2.layer.zPosition = -2
         self.view.addSubview(road2)
         
         roadTimer = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { _ in
             var currentCenterRoad2 = self.road2.center
             currentCenterRoad2.y += 2
             self.road2.center = currentCenterRoad2
-            if self.road2.frame.origin.y == 896 {
-                self.road2.frame.origin.y = -896
+            if self.road2.frame.origin.y >= height {
+                self.road2.frame.origin.y = (-1) * height
             }
             
             var currentCenterRoad1 = self.road1.center
             currentCenterRoad1.y += 2
             self.road1.center = currentCenterRoad1
-            if self.road1.frame.origin.y == 896 {
-                self.road1.frame.origin.y = -896
+            if self.road1.frame.origin.y >= height {
+                self.road1.frame.origin.y = (-1) * height
             }
         }
         
-        self.view.willRemoveSubview(self.road1)
-        self.view.willRemoveSubview(self.road2)
     }
     
     @objc func didTapToMoveRight() {
@@ -140,3 +140,5 @@ class RaceGame: UIViewController {
     }
     
 }
+
+
