@@ -8,30 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		FD4D9EEF28B4251A00A3D850 /* RubikDirt-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD4D9EEE28B4251A00A3D850 /* RubikDirt-Regular.ttf */; };
+		FD716B6628B6AC81004CCC25 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD716B6528B6AC81004CCC25 /* Results.swift */; };
 		FDB2888128214E5300E94824 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2888028214E5300E94824 /* AppDelegate.swift */; };
 		FDB2888328214E5300E94824 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2888228214E5300E94824 /* SceneDelegate.swift */; };
-		FDB2888528214E5300E94824 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2888428214E5300E94824 /* MainMenu.swift */; };
+		FDB2888528214E5300E94824 /* MainMenuViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2888428214E5300E94824 /* MainMenuViewContoller.swift */; };
 		FDB2888828214E5300E94824 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDB2888628214E5300E94824 /* Main.storyboard */; };
 		FDB2888A28214E5500E94824 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB2888928214E5500E94824 /* Assets.xcassets */; };
 		FDB2888D28214E5500E94824 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDB2888B28214E5500E94824 /* LaunchScreen.storyboard */; };
-		FDB2889728214E7900E94824 /* HighscoreTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2889628214E7900E94824 /* HighscoreTable.swift */; };
-		FDB2889928214EB600E94824 /* RaceGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2889828214EB600E94824 /* RaceGame.swift */; };
-		FDB2889B28214ECE00E94824 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2889A28214ECE00E94824 /* Settings.swift */; };
+		FDB2889728214E7900E94824 /* HighscoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2889628214E7900E94824 /* HighscoreTableViewController.swift */; };
+		FDB2889928214EB600E94824 /* RaceGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2889828214EB600E94824 /* RaceGameViewController.swift */; };
+		FDB2889B28214ECE00E94824 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2889A28214ECE00E94824 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FD4D9EEE28B4251A00A3D850 /* RubikDirt-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RubikDirt-Regular.ttf"; sourceTree = "<group>"; };
+		FD716B6528B6AC81004CCC25 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		FDB2887D28214E5300E94824 /* Racing Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Racing Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDB2888028214E5300E94824 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDB2888228214E5300E94824 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FDB2888428214E5300E94824 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		FDB2888428214E5300E94824 /* MainMenuViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewContoller.swift; sourceTree = "<group>"; };
 		FDB2888728214E5300E94824 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FDB2888928214E5500E94824 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDB2888C28214E5500E94824 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FDB2888E28214E5500E94824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FDB2889628214E7900E94824 /* HighscoreTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreTable.swift; sourceTree = "<group>"; };
-		FDB2889828214EB600E94824 /* RaceGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceGame.swift; sourceTree = "<group>"; };
-		FDB2889A28214ECE00E94824 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		FDB2889628214E7900E94824 /* HighscoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreTableViewController.swift; sourceTree = "<group>"; };
+		FDB2889828214EB600E94824 /* RaceGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceGameViewController.swift; sourceTree = "<group>"; };
+		FDB2889A28214ECE00E94824 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,14 +77,15 @@
 				FD4D9EEB28B4201800A3D850 /* Fonts */,
 				FDB2888028214E5300E94824 /* AppDelegate.swift */,
 				FDB2888228214E5300E94824 /* SceneDelegate.swift */,
-				FDB2888428214E5300E94824 /* MainMenu.swift */,
-				FDB2889828214EB600E94824 /* RaceGame.swift */,
-				FDB2889628214E7900E94824 /* HighscoreTable.swift */,
-				FDB2889A28214ECE00E94824 /* Settings.swift */,
+				FDB2888428214E5300E94824 /* MainMenuViewContoller.swift */,
+				FDB2889828214EB600E94824 /* RaceGameViewController.swift */,
+				FDB2889628214E7900E94824 /* HighscoreTableViewController.swift */,
+				FDB2889A28214ECE00E94824 /* SettingsViewController.swift */,
 				FDB2888628214E5300E94824 /* Main.storyboard */,
 				FDB2888928214E5500E94824 /* Assets.xcassets */,
 				FDB2888B28214E5500E94824 /* LaunchScreen.storyboard */,
 				FDB2888E28214E5500E94824 /* Info.plist */,
+				FD716B6528B6AC81004CCC25 /* Results.swift */,
 			);
 			path = "Racing Game";
 			sourceTree = "<group>";
@@ -159,10 +162,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDB2889B28214ECE00E94824 /* Settings.swift in Sources */,
-				FDB2888528214E5300E94824 /* MainMenu.swift in Sources */,
-				FDB2889928214EB600E94824 /* RaceGame.swift in Sources */,
-				FDB2889728214E7900E94824 /* HighscoreTable.swift in Sources */,
+				FDB2889B28214ECE00E94824 /* SettingsViewController.swift in Sources */,
+				FDB2888528214E5300E94824 /* MainMenuViewContoller.swift in Sources */,
+				FDB2889928214EB600E94824 /* RaceGameViewController.swift in Sources */,
+				FD716B6628B6AC81004CCC25 /* Results.swift in Sources */,
+				FDB2889728214E7900E94824 /* HighscoreTableViewController.swift in Sources */,
 				FDB2888128214E5300E94824 /* AppDelegate.swift in Sources */,
 				FDB2888328214E5300E94824 /* SceneDelegate.swift in Sources */,
 			);

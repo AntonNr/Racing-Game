@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main Menu-->
+        <!--Main Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainMenu" customModule="Racing_Game" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainMenuViewController" id="BYZ-38-t0r" customClass="MainMenuViewController" customModule="Racing_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,30 +94,57 @@
             </objects>
             <point key="canvasLocation" x="-433" y="-225"/>
         </scene>
-        <!--Race Game-->
+        <!--Race Game View Controller-->
         <scene sceneID="l3u-t1-fLP">
             <objects>
-                <viewController storyboardIdentifier="RaceGame" id="cLG-oG-nHg" customClass="RaceGame" customModule="Racing_Game" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RaceGameViewController" id="cLG-oG-nHg" customClass="RaceGameViewController" customModule="Racing_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LF6-sS-1mT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMY-Mc-PZf">
+                                <rect key="frame" x="312" y="44" width="74" height="31"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ux-Aa-ukx">
+                                <rect key="frame" x="10" y="44" width="106" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Zsr-Wh-gVG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CMY-Mc-PZf" firstAttribute="top" secondItem="Zsr-Wh-gVG" secondAttribute="top" id="2FF-0p-CB2"/>
+                            <constraint firstItem="5ux-Aa-ukx" firstAttribute="leading" secondItem="Zsr-Wh-gVG" secondAttribute="leading" constant="10" id="36o-Lu-0KX"/>
+                            <constraint firstItem="5ux-Aa-ukx" firstAttribute="top" secondItem="Zsr-Wh-gVG" secondAttribute="top" id="GLc-VH-CgA"/>
+                            <constraint firstItem="Zsr-Wh-gVG" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="CMY-Mc-PZf" secondAttribute="trailing" constant="60" id="JLL-Lu-CDV"/>
+                            <constraint firstItem="CMY-Mc-PZf" firstAttribute="leading" secondItem="Zsr-Wh-gVG" secondAttribute="leading" constant="312" id="vgw-tV-O5Q"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="distanceLabel" destination="5ux-Aa-ukx" id="nNl-3h-7fb"/>
+                        <outlet property="scoreLabel" destination="CMY-Mc-PZf" id="oCk-Af-hL5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3p6-eC-Oc3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="532" y="-225"/>
         </scene>
-        <!--Highscore Table-->
+        <!--Highscore Table View Contoller-->
         <scene sceneID="Grr-az-vdr">
             <objects>
-                <viewController storyboardIdentifier="HighscoreTable" id="dTa-Ea-S7c" customClass="HighscoreTable" customModule="Racing_Game" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HighscoreTableViewContoller" id="dTa-Ea-S7c" customClass="HighscoreTableViewContoller" customModule="Racing_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WpL-FR-l9P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HIghscores" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Llw-DT-JX9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Highscores" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Llw-DT-JX9">
                                 <rect key="frame" x="133.5" y="119" width="147" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
@@ -134,12 +161,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63d-hS-eU4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1936" y="-225"/>
+            <point key="canvasLocation" x="532" y="601"/>
         </scene>
-        <!--Settings-->
+        <!--Settings View Controller-->
         <scene sceneID="cgz-ky-FG1">
             <objects>
-                <viewController storyboardIdentifier="Settings" id="5gL-Np-Dv9" customClass="Settings" customModule="Racing_Game" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="5gL-Np-Dv9" customClass="SettingsViewController" customModule="Racing_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kfq-4I-vLf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -150,18 +177,114 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rider Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wr3-jV-aqD">
+                                <rect key="frame" x="10" y="260" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZ8-aM-aeh">
+                                <rect key="frame" x="10" y="431" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Obstacle Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRc-kv-VqZ">
+                                <rect key="frame" x="10" y="652" width="110" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-77-jvr">
+                                <rect key="frame" x="109" y="255" width="218" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Yellow Car" translatesAutoresizingMaskIntoConstraints="NO" id="qNt-Qw-YX9">
+                                <rect key="frame" x="109" y="389" width="101" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Green Car" translatesAutoresizingMaskIntoConstraints="NO" id="uWe-Kc-wSh">
+                                <rect key="frame" x="247" y="389" width="157" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bush" translatesAutoresizingMaskIntoConstraints="NO" id="Guf-ZN-cZe">
+                                <rect key="frame" x="136" y="611" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cone" translatesAutoresizingMaskIntoConstraints="NO" id="LuK-HB-QYq">
+                                <rect key="frame" x="275" y="611" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Az6-ff-eyZ">
+                                <rect key="frame" x="294" y="525" width="63" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Green"/>
+                                <connections>
+                                    <action selector="didChooseCarWithSender:" destination="5gL-Np-Dv9" eventType="touchUpInside" id="rEK-2E-RUY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQi-xi-mnk">
+                                <rect key="frame" x="158" y="719" width="57" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Bush"/>
+                                <connections>
+                                    <action selector="didChooseObstacleWithSender:" destination="5gL-Np-Dv9" eventType="touchUpInside" id="gEH-c7-Ckl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpJ-w2-nI6">
+                                <rect key="frame" x="297" y="719" width="58" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Cone"/>
+                                <connections>
+                                    <action selector="didChooseObstacleWithSender:" destination="5gL-Np-Dv9" eventType="touchUpInside" id="HwN-fj-XS2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZZ-Ws-3LD">
+                                <rect key="frame" x="348.5" y="257" width="55.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Save"/>
+                                <connections>
+                                    <action selector="didTapSaveName" destination="5gL-Np-Dv9" eventType="touchUpInside" id="1nk-JL-Dxs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6QM-qh-sLd">
+                                <rect key="frame" x="127" y="525" width="66" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Yellow"/>
+                                <connections>
+                                    <action selector="didChooseCarWithSender:" destination="5gL-Np-Dv9" eventType="touchUpInside" id="NRu-ED-3jz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Iwa-ep-ysH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="wr3-jV-aqD" firstAttribute="top" secondItem="Iwa-ep-ysH" secondAttribute="top" constant="216" id="6Ub-Ha-tGt"/>
+                            <constraint firstItem="zbl-77-jvr" firstAttribute="leading" relation="lessThanOrEqual" secondItem="wr3-jV-aqD" secondAttribute="trailing" constant="10" id="Ep1-HJ-gr9"/>
+                            <constraint firstItem="Iwa-ep-ysH" firstAttribute="trailing" secondItem="zbl-77-jvr" secondAttribute="trailing" constant="87" id="GXm-85-aLS"/>
+                            <constraint firstItem="EZZ-Ws-3LD" firstAttribute="top" secondItem="Iwa-ep-ysH" secondAttribute="top" constant="213" id="NEY-X1-otU"/>
+                            <constraint firstItem="wr3-jV-aqD" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Iwa-ep-ysH" secondAttribute="leading" constant="10" id="NRs-tY-WUj"/>
                             <constraint firstItem="S9w-DS-KRm" firstAttribute="top" secondItem="Iwa-ep-ysH" secondAttribute="top" constant="75" id="PTr-X4-nn0"/>
+                            <constraint firstItem="Iwa-ep-ysH" firstAttribute="leading" secondItem="kfq-4I-vLf" secondAttribute="leading" id="SqH-N2-39j"/>
                             <constraint firstItem="S9w-DS-KRm" firstAttribute="centerX" secondItem="kfq-4I-vLf" secondAttribute="centerX" id="nlj-Ec-JFE"/>
+                            <constraint firstItem="zbl-77-jvr" firstAttribute="top" secondItem="S9w-DS-KRm" secondAttribute="bottom" constant="100" id="qa2-el-Sod"/>
+                            <constraint firstItem="Iwa-ep-ysH" firstAttribute="trailing" secondItem="EZZ-Ws-3LD" secondAttribute="trailing" constant="10" id="wqA-Nf-SH5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="zbl-77-jvr" id="P8l-pF-8DO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I7L-9z-Jl6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-433" y="602"/>
+            <point key="canvasLocation" x="-433.33333333333337" y="601.33928571428567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xVT-XK-kUC">
@@ -181,6 +304,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Bush" width="600" height="356"/>
+        <image name="Cone" width="512" height="512"/>
+        <image name="Green Car" width="600" height="1255"/>
+        <image name="Yellow Car" width="514" height="980"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

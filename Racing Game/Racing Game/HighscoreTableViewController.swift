@@ -1,6 +1,6 @@
 import UIKit
 
-class Settings: UIViewController {
+class HighscoreTableViewContoller: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

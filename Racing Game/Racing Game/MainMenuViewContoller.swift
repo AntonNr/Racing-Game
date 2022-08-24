@@ -1,6 +1,6 @@
 import UIKit
 
-class MainMenu: UIViewController {
+class MainMenuViewController: UIViewController {
 
     @IBOutlet var mainLabel: UILabel!
     @IBOutlet var startButton: UIButton!
@@ -11,7 +11,7 @@ class MainMenu: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let attributed: [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor : UIColor.red, NSAttributedString.Key.font : UIFont(name: "RubikDirt-Regular", size: 40)]
+        let attributed: [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor : UIColor.red, NSAttributedString.Key.font : UIFont(name: "RubikDirt-Regular", size: 40) as Any]
         let attrString = NSAttributedString(string: "Race Game", attributes: attributed)
         mainLabel.attributedText = attrString
         
@@ -27,7 +27,7 @@ class MainMenu: UIViewController {
 
     @IBAction func didTapStart(){
         let str: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = str.instantiateViewController(withIdentifier: "RaceGame") as! RaceGame
+        let viewController = str.instantiateViewController(withIdentifier: "RaceGameViewController") as! RaceGameViewController
         
         viewController.modalPresentationStyle = .fullScreen
         viewController.modalTransitionStyle = .coverVertical
@@ -37,7 +37,7 @@ class MainMenu: UIViewController {
     
     @IBAction func didTapHighscore(){
         let str: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = str.instantiateViewController(withIdentifier: "HighscoreTable") as! HighscoreTable
+        let viewController = str.instantiateViewController(withIdentifier: "HighscoreTableViewContoller") as! HighscoreTableViewContoller
         
         viewController.modalPresentationStyle = .fullScreen
         viewController.modalTransitionStyle = .coverVertical
@@ -47,7 +47,7 @@ class MainMenu: UIViewController {
     
     @IBAction func didTapSettings(){
         let str: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = str.instantiateViewController(withIdentifier: "Settings") as! Settings
+        let viewController = str.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
         
         viewController.modalPresentationStyle = .fullScreen
         viewController.modalTransitionStyle = .coverVertical

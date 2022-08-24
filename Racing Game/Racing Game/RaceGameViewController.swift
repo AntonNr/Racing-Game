@@ -1,10 +1,16 @@
 import UIKit
 
-class RaceGame: UIViewController {
+class RaceGameViewController: UIViewController {
+    @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var distanceLabel: UILabel!
+    
     var road1: UIImageView = UIImageView()
     var road2: UIImageView = UIImageView()
-    var bush: UIImageView = UIImageView()
+    var obstacle: UIImageView = UIImageView()
     var car: UIImageView = UIImageView()
+    var score: Int = 0
+    var distance: Double = 0.0
+    var roundedDistance: Double = 0.0
     
     var timer: Timer?
     var roadTimer: Timer?
@@ -12,9 +18,19 @@ class RaceGame: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //UserDefaults.standard.reset()
         
-        car.image = UIImage(named: "Car")
-        car.frame = CGRect(x: UIScreen.main.bounds.width / 2 + 10, y: UIScreen.main.bounds.height - 300, width: 150, height: 150)
+        let carColor = UserDefaults.standard.string(forKey: "kCar")
+        
+        switch carColor {
+        case "Yellow":
+            car.image = UIImage(named: "Yellow Car")
+        case "Green":
+            car.image = UIImage(named: "Green Car")
+        default: break
+        }
+        
+        car.frame = CGRect(x: UIScreen.main.bounds.width / 2 + 45, y: UIScreen.main.bounds.height - 300, width: 75, height: 150)
         view.addSubview(car)
         
         let rightArrowImage = UIImage(named: "RightArrow")
@@ -30,9 +46,10 @@ class RaceGame: UIViewController {
         view.addSubview(leftArrowButton)
         
         moveBush()
-        timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(moveBush), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 11, target: self, selector: #selector(moveBush), userInfo: nil, repeats: true)
         roadTimer = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(moveRoad), userInfo: nil, repeats: false)
         
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     @objc func moveBush() {
@@ -47,23 +64,34 @@ class RaceGame: UIViewController {
         default: break
         }
         
-        bush.image = UIImage(named: "Bush")
-        bush.frame = CGRect(x: randomPositionOfBush, y: -128, width: 150, height: 150)
-        bush.layer.zPosition = -1
-        self.view.addSubview(bush)
+        let obstacleType = UserDefaults.standard.string(forKey: "kObstacle")
+        
+        switch obstacleType {
+        case "Bush": obstacle.image = UIImage(named: "Bush")
+        case "Cone": obstacle.image = UIImage(named: "Cone")
+        default: break
+        }
+        
+        obstacle.frame = CGRect(x: randomPositionOfBush, y: -128, width: 150, height: 150)
+        obstacle.layer.zPosition = -1
+        self.view.addSubview(obstacle)
         
         timerToCompare = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true, block: {
             timerToCompare in
-            self.bush.frame.origin.y += 8
+            self.obstacle.frame.origin.y += 2
             
-            if self.bush.frame.minY > screenHeight {
+            if self.obstacle.frame.minY > screenHeight {
                 timerToCompare.invalidate()
+                self.score += 1
+                self.scoreLabel.text = "Score: \(self.score)"
             }
             
-            if self.bush.frame.intersects(self.car.frame) {
+            if self.obstacle.frame.intersects(self.car.frame) {
                 timerToCompare.invalidate()
-                self.view.willRemoveSubview(self.bush)
+                self.view.willRemoveSubview(self.obstacle)
                 self.timer?.invalidate()
+                self.roadTimer?.invalidate()
+                self.saveRecord()
                 
                 let alert = UIAlertController(title: "Game Over", message: "", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Menu", style: .cancel, handler: {
@@ -96,8 +124,8 @@ class RaceGame: UIViewController {
             var currentCenterRoad2 = self.road2.center
             currentCenterRoad2.y += 2
             self.road2.center = currentCenterRoad2
-            if self.road2.frame.origin.y == 896 {
-                self.road2.frame.origin.y = -896
+            if self.road2.frame == CGRect(x: 0, y: 896, width: 414, height: 896) {
+                self.road2.frame = CGRect(x: 0, y: -896, width: 414, height: 896)
             }
             
             var currentCenterRoad1 = self.road1.center
@@ -106,6 +134,10 @@ class RaceGame: UIViewController {
             if self.road1.frame.origin.y == 896 {
                 self.road1.frame.origin.y = -896
             }
+            
+            self.distance += 0.01
+            self.roundedDistance = round(self.distance * 10) / 10.0
+            self.distanceLabel.text = "Distance: \(self.roundedDistance)"
         }
         
     }
@@ -115,26 +147,42 @@ class RaceGame: UIViewController {
         let screenWidth = screenSize.width
         
         UIView.animate(withDuration: 0.2, delay: 0, options: .allowAnimatedContent) {
-            if self.car.frame.maxX + 170 > screenWidth {
-                self.car.frame = CGRect(x: self.car.frame.minX, y: self.car.frame.minY, width: 150, height: 150)
+            if self.car.frame.maxX + 100 > screenWidth {
+                self.car.frame = CGRect(x: self.car.frame.minX, y: self.car.frame.minY, width: 75, height: 150)
             } else {
-                self.car.frame = CGRect(x: self.car.frame.minX + 170, y: self.car.frame.minY, width: 150, height: 150)
+                self.car.frame = CGRect(x: self.car.frame.minX + 165, y: self.car.frame.minY, width: 75, height: 150)
             }
         }
     }
     
     @objc func didTapToMoveLeft() {
         UIView.animate(withDuration: 0.2, delay: 0, options: .allowAnimatedContent) {
-            if self.car.frame.maxX - 170 < 170 {
-                self.car.frame = CGRect(x: self.car.frame.minX, y: self.car.frame.minY, width: 150, height: 150)
+            if self.car.frame.maxX - 100 < 170 {
+                self.car.frame = CGRect(x: self.car.frame.minX, y: self.car.frame.minY, width: 75, height: 150)
             } else {
-                self.car.frame = CGRect(x: self.car.frame.minX - 170, y: self.car.frame.minY, width: 150, height: 150)
+                self.car.frame = CGRect(x: self.car.frame.minX - 165, y: self.car.frame.minY, width: 75, height: 150)
             }
         }
     }
     
     @objc func didTapClose() {
         self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func saveRecord() {
+        var records: [Results] = []
+        
+        if let recordsData = UserDefaults.standard.data(forKey: UserDefaults.Keys.records.rawValue) {
+            if let oldRecords: [Results] = try? JSONDecoder().decode(Array<Results>.self, from: recordsData) {
+                records = oldRecords
+            }
+        }
+        
+        let currentRecord = Results(name: UserDefaults.standard.object(forKey: UserDefaults.Keys.racerName.rawValue) as? String ?? "DefaultName", distance: roundedDistance, score: score)
+        
+        records.append(currentRecord)
+        let recordsData = try? JSONEncoder().encode(records)
+        UserDefaults.standard.set(recordsData, forKey: UserDefaults.Keys.records.rawValue)
     }
     
 }
