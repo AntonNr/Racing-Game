@@ -178,11 +178,17 @@ class RaceGameViewController: UIViewController {
             }
         }
         
-        let currentRecord = Results(name: UserDefaults.standard.object(forKey: UserDefaults.Keys.racerName.rawValue) as? String ?? "DefaultName", distance: roundedDistance, score: score)
+        let currentRecord = Results(name: UserDefaults.standard.object(forKey: UserDefaults.Keys.racerName.rawValue) as? String ?? "DefaultName", date: Date(), distance: roundedDistance, score: score)
         
         records.append(currentRecord)
         let recordsData = try? JSONEncoder().encode(records)
         UserDefaults.standard.set(recordsData, forKey: UserDefaults.Keys.records.rawValue)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .medium
+        
+        print(dateFormatter.string(from: currentRecord.date))
     }
     
 }
