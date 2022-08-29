@@ -18,7 +18,6 @@ class RaceGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //UserDefaults.standard.reset()
         
         let carColor = UserDefaults.standard.string(forKey: "kCar")
         
@@ -78,7 +77,7 @@ class RaceGameViewController: UIViewController {
         
         timerToCompare = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true, block: {
             timerToCompare in
-            self.obstacle.frame.origin.y += 2
+            self.obstacle.frame.origin.y += 3
             
             if self.obstacle.frame.minY > screenHeight {
                 timerToCompare.invalidate()
@@ -92,6 +91,7 @@ class RaceGameViewController: UIViewController {
                 self.timer?.invalidate()
                 self.roadTimer?.invalidate()
                 self.saveRecord()
+                //UserDefaults.standard.reset()
                 
                 let alert = UIAlertController(title: "Game Over", message: "", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Menu", style: .cancel, handler: {
@@ -110,6 +110,7 @@ class RaceGameViewController: UIViewController {
     }
 
     @objc func moveRoad() {
+        
         road1.image = UIImage(named: "Road2")
         road1.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         road1.layer.zPosition = -2
@@ -122,16 +123,16 @@ class RaceGameViewController: UIViewController {
         
         roadTimer = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { _ in
             var currentCenterRoad2 = self.road2.center
-            currentCenterRoad2.y += 2
+            currentCenterRoad2.y += 3
             self.road2.center = currentCenterRoad2
-            if self.road2.frame == CGRect(x: 0, y: 896, width: 414, height: 896) {
-                self.road2.frame = CGRect(x: 0, y: -896, width: 414, height: 896)
+            if self.road2.frame.origin.y >= 896 {
+                self.road2.frame.origin.y = -896
             }
             
             var currentCenterRoad1 = self.road1.center
-            currentCenterRoad1.y += 2
+            currentCenterRoad1.y += 3
             self.road1.center = currentCenterRoad1
-            if self.road1.frame.origin.y == 896 {
+            if self.road1.frame.origin.y >= 896 {
                 self.road1.frame.origin.y = -896
             }
             

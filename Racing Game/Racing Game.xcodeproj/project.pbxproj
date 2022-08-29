@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FD4D9EEF28B4251A00A3D850 /* RubikDirt-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD4D9EEE28B4251A00A3D850 /* RubikDirt-Regular.ttf */; };
 		FD716B6628B6AC81004CCC25 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD716B6528B6AC81004CCC25 /* Results.swift */; };
+		FD716B8828BCD1AB004CCC25 /* HighscoresTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD716B8728BCD1AB004CCC25 /* HighscoresTableViewCells.swift */; };
 		FDB2888128214E5300E94824 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2888028214E5300E94824 /* AppDelegate.swift */; };
 		FDB2888328214E5300E94824 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2888228214E5300E94824 /* SceneDelegate.swift */; };
 		FDB2888528214E5300E94824 /* MainMenuViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2888428214E5300E94824 /* MainMenuViewContoller.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		FD4D9EEE28B4251A00A3D850 /* RubikDirt-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RubikDirt-Regular.ttf"; sourceTree = "<group>"; };
 		FD716B6528B6AC81004CCC25 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		FD716B8728BCD1AB004CCC25 /* HighscoresTableViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresTableViewCells.swift; sourceTree = "<group>"; };
 		FDB2887D28214E5300E94824 /* Racing Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Racing Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDB2888028214E5300E94824 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDB2888228214E5300E94824 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				FDB2888B28214E5500E94824 /* LaunchScreen.storyboard */,
 				FDB2888E28214E5500E94824 /* Info.plist */,
 				FD716B6528B6AC81004CCC25 /* Results.swift */,
+				FD716B8728BCD1AB004CCC25 /* HighscoresTableViewCells.swift */,
 			);
 			path = "Racing Game";
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			files = (
 				FDB2889B28214ECE00E94824 /* SettingsViewController.swift in Sources */,
 				FDB2888528214E5300E94824 /* MainMenuViewContoller.swift in Sources */,
+				FD716B8828BCD1AB004CCC25 /* HighscoresTableViewCells.swift in Sources */,
 				FDB2889928214EB600E94824 /* RaceGameViewController.swift in Sources */,
 				FD716B6628B6AC81004CCC25 /* Results.swift in Sources */,
 				FDB2889728214E7900E94824 /* HighscoreTableViewController.swift in Sources */,
