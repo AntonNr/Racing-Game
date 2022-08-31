@@ -15,9 +15,12 @@ class RaceGameViewController: UIViewController {
     var timer: Timer?
     var roadTimer: Timer?
     var timerToCompare: Timer?
+    var timerToCarJump: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.becomeFirstResponder()
         
         let carColor = UserDefaults.standard.string(forKey: "kCar")
         
@@ -190,6 +193,23 @@ class RaceGameViewController: UIViewController {
         dateFormatter.timeStyle = .medium
         
         print(dateFormatter.string(from: currentRecord.date))
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            
+            car.frame.origin.y += 50
+            
+            timerToCarJump = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: false, block: { _ in
+                
+                self.car.frame.origin.y -= 4
+                
+            })
+        }
+    }
+    
+    func canBecomeFirstResponder() -> Bool {
+        return true
     }
     
 }
