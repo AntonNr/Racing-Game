@@ -2,12 +2,14 @@ import UIKit
 
 class HighscoreTableViewContoller: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet var highscoresLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     var records: [Results] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        localizedString()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -16,7 +18,7 @@ class HighscoreTableViewContoller: UIViewController, UITableViewDelegate, UITabl
         
         tableView.reloadData()
         
-        let rootScreen = UIBarButtonItem(title: "Close", style: .done, target: self, action: #selector(didTapClose))
+        let rootScreen = UIBarButtonItem(title: NSLocalizedString("back_button", comment: ""), style: .done, target: self, action: #selector(didTapClose))
         navigationItem.leftBarButtonItem = rootScreen
     }
 
@@ -54,6 +56,10 @@ class HighscoreTableViewContoller: UIViewController, UITableViewDelegate, UITabl
         }
         
         return UITableViewCell()
+    }
+    
+    func localizedString() {
+        NSLocalizedString("highscores_label", comment: "")
     }
     
 }

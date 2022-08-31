@@ -226,6 +226,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="highscoresLabel" destination="Llw-DT-JX9" id="nyG-MV-JaL"/>
                         <outlet property="tableView" destination="6A1-qO-z1j" id="1fY-jd-2Zy"/>
                     </connections>
                 </viewController>
@@ -349,7 +350,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bushButton" destination="CQi-xi-mnk" id="YvF-wg-Tfd"/>
+                        <outlet property="carLabel" destination="nZ8-aM-aeh" id="XNP-VH-U7C"/>
+                        <outlet property="coneButton" destination="lpJ-w2-nI6" id="Vbf-38-GKC"/>
+                        <outlet property="greenCarButton" destination="Az6-ff-eyZ" id="vrs-hj-vFj"/>
+                        <outlet property="obstacleLabel" destination="IRc-kv-VqZ" id="9KO-qx-e71"/>
+                        <outlet property="riderNameLabel" destination="wr3-jV-aqD" id="5e7-Vm-fep"/>
+                        <outlet property="saveButton" destination="EZZ-Ws-3LD" id="j1Q-sc-VV5"/>
+                        <outlet property="settingsLabel" destination="S9w-DS-KRm" id="yTJ-kz-bZq"/>
                         <outlet property="textField" destination="zbl-77-jvr" id="P8l-pF-8DO"/>
+                        <outlet property="yellowCarButton" destination="6QM-qh-sLd" id="ohm-5v-Btw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I7L-9z-Jl6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

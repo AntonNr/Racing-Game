@@ -2,14 +2,23 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    @IBOutlet var settingsLabel: UILabel!
+    @IBOutlet var riderNameLabel: UILabel!
+    @IBOutlet var obstacleLabel: UILabel!
+    @IBOutlet var carLabel: UILabel!
+    @IBOutlet var saveButton: UIButton!
+    @IBOutlet var yellowCarButton: UIButton!
+    @IBOutlet var greenCarButton: UIButton!
+    @IBOutlet var bushButton: UIButton!
+    @IBOutlet var coneButton: UIButton!
     @IBOutlet var textField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
+        localizedString()
         
-        let rootScreen = UIBarButtonItem(title: "Close", style: .done, target: self, action: #selector(didTapClose))
+        let rootScreen = UIBarButtonItem(title: NSLocalizedString("back_button", comment: ""), style: .done, target: self, action: #selector(didTapClose))
         navigationItem.leftBarButtonItem = rootScreen
     }
 
@@ -42,6 +51,18 @@ class SettingsViewController: UIViewController {
     @IBAction func didTapSaveName() {
         UserDefaults.standard.set(textField.text, forKey: UserDefaults.Keys.racerName.rawValue)
         textField.text = ""
+    }
+    
+    func localizedString() {
+        saveButton.titleLabel?.text = NSLocalizedString("settings_save_button", comment: "")
+        yellowCarButton.titleLabel?.text = NSLocalizedString("settings_yellow_car_button", comment: "")
+        greenCarButton.titleLabel?.text = NSLocalizedString("settings_green_car_button", comment: "")
+        bushButton.titleLabel?.text = NSLocalizedString("settings_bush_button", comment: "")
+        coneButton.titleLabel?.text = NSLocalizedString("settings_cone_button", comment: "")
+        settingsLabel.text = NSLocalizedString("settings_label", comment: "")
+        riderNameLabel.text = NSLocalizedString("settings_rider_name_label", comment: "")
+        carLabel.text = NSLocalizedString("settings_car_label", comment: "")
+        obstacleLabel.text = NSLocalizedString("settings_obstacle_type_label", comment: "")
     }
 }
 

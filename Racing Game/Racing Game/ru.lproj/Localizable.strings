@@ -1,0 +1,17 @@
+"main_menu_play_button" = "Играть";
+"main_menu_highscores_button" = "Рекорды";
+"main_menu_settings_button" = "Настройки";
+
+"settings_save_button" = "Сохранить";
+"settings_yellow_car_button" = "Жёлтый";
+"settings_green_car_button" = "Зелёный";
+"settings_bush_button" = "Куст";
+"settings_cone_button" = "Конус";
+"settings_label" = "Настройки";
+"settings_rider_name_label" = "Имя гонщика";
+"settings_car_label" = "Машина";
+"settings_obstacle_type_label" = "Тип препятствия";
+
+"highscores_label" = "Рекорды";
+
+"back_button" = "Назад";

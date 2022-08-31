@@ -9,7 +9,8 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        localizedString()
         
         let attributed: [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor : UIColor.red, NSAttributedString.Key.font : UIFont(name: "RubikDirt-Regular", size: 40) as Any]
         let attrString = NSAttributedString(string: "Race Game", attributes: attributed)
@@ -53,6 +54,12 @@ class MainMenuViewController: UIViewController {
         viewController.modalTransitionStyle = .coverVertical
         
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    func localizedString() {
+        startButton.titleLabel?.text = NSLocalizedString("main_menu_play_button", comment: "")
+        highscoresButton.titleLabel?.text = NSLocalizedString("main_menu_highscores_button", comment: "")
+        settingsButton.titleLabel?.text = NSLocalizedString("main_menu_settings_button", comment: "")
     }
 }
 

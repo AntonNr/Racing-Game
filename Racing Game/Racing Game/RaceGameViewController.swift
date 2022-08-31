@@ -45,7 +45,7 @@ class RaceGameViewController: UIViewController {
         view.addSubview(leftArrowButton)
         
         moveBush()
-        timer = Timer.scheduledTimer(timeInterval: 11, target: self, selector: #selector(moveBush), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(moveBush), userInfo: nil, repeats: true)
         roadTimer = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(moveRoad), userInfo: nil, repeats: false)
         
         self.navigationItem.setHidesBackButton(true, animated: true)
@@ -77,7 +77,7 @@ class RaceGameViewController: UIViewController {
         
         timerToCompare = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true, block: {
             timerToCompare in
-            self.obstacle.frame.origin.y += 3
+            self.obstacle.frame.origin.y += 4
             
             if self.obstacle.frame.minY > screenHeight {
                 timerToCompare.invalidate()
@@ -117,23 +117,23 @@ class RaceGameViewController: UIViewController {
         self.view.addSubview(road1)
         
         road2.image = UIImage(named: "Road2")
-        road2.frame = CGRect(x: 0, y: -896, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        road2.frame = CGRect(x: 0, y: (-1) * UIScreen.main.bounds.height, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         road2.layer.zPosition = -2
         self.view.addSubview(road2)
         
         roadTimer = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { _ in
             var currentCenterRoad2 = self.road2.center
-            currentCenterRoad2.y += 3
+            currentCenterRoad2.y += 4
             self.road2.center = currentCenterRoad2
-            if self.road2.frame.origin.y >= 896 {
-                self.road2.frame.origin.y = -896
+            if self.road2.frame.origin.y >= UIScreen.main.bounds.height {
+                self.road2.frame.origin.y = (-1) * UIScreen.main.bounds.height
             }
             
             var currentCenterRoad1 = self.road1.center
-            currentCenterRoad1.y += 3
+            currentCenterRoad1.y += 4
             self.road1.center = currentCenterRoad1
-            if self.road1.frame.origin.y >= 896 {
-                self.road1.frame.origin.y = -896
+            if self.road1.frame.origin.y >= UIScreen.main.bounds.height {
+                self.road1.frame.origin.y = (-1) * UIScreen.main.bounds.height
             }
             
             self.distance += 0.01

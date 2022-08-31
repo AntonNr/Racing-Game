@@ -1,10 +1,3 @@
-//
-//  HighscoresCells.swift
-//  Racing Game
-//
-//  Created by Антон Нарижный on 29.08.22.
-//
-
 import Foundation
 import UIKit
 

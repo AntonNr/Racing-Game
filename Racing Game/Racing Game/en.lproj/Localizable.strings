@@ -1,0 +1,17 @@
+"main_menu_play_button" = "Start";
+"main_menu_highscores_button" = "Highscores";
+"main_menu_settings_button" = "Settings";
+
+"settings_save_button" = "Save";
+"settings_yellow_car_button" = "Yellow";
+"settings_green_car_button" = "Green";
+"settings_bush_button" = "Bush";
+"settings_cone_button" = "Cone";
+"settings_label" = "Settings";
+"settings_rider_name_label" = "Rider Name";
+"settings_car_label" = "Car";
+"settings_obstacle_type_label" = "Obstacle Type";
+
+"highscores_label" = "Highscores";
+
+"back_button" = "Back";
