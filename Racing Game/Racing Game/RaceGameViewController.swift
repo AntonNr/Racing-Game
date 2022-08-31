@@ -198,12 +198,13 @@ class RaceGameViewController: UIViewController {
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             
+            let carOriginYPozition = car.frame.origin.y
             car.frame.origin.y += 50
             
             timerToCarJump = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: false, block: { _ in
-                
-                self.car.frame.origin.y -= 4
-                
+                if self.car.frame.origin.y != carOriginYPozition {
+                    self.car.frame.origin.y -= 4
+                }
             })
         }
     }
