@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D012DF33023035C42BA9F87 /* Pods_Racing_Game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D5825C5ACB78B8D359D3A8 /* Pods_Racing_Game.framework */; };
 		FD4D9EEF28B4251A00A3D850 /* RubikDirt-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD4D9EEE28B4251A00A3D850 /* RubikDirt-Regular.ttf */; };
 		FD716B6628B6AC81004CCC25 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD716B6528B6AC81004CCC25 /* Results.swift */; };
 		FD716B8828BCD1AB004CCC25 /* HighscoresTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD716B8728BCD1AB004CCC25 /* HighscoresTableViewCells.swift */; };
@@ -19,10 +20,14 @@
 		FDB2889728214E7900E94824 /* HighscoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2889628214E7900E94824 /* HighscoreTableViewController.swift */; };
 		FDB2889928214EB600E94824 /* RaceGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2889828214EB600E94824 /* RaceGameViewController.swift */; };
 		FDB2889B28214ECE00E94824 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2889A28214ECE00E94824 /* SettingsViewController.swift */; };
+		FDF3003628C257CC00D572EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDF3003528C257CC00D572EA /* GoogleService-Info.plist */; };
 		FDFE01D628BF94AD00A45A77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDFE01D828BF94AD00A45A77 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27D5825C5ACB78B8D359D3A8 /* Pods_Racing_Game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Racing_Game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B1E8F806339237F60697E29 /* Pods-Racing Game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Racing Game.debug.xcconfig"; path = "Target Support Files/Pods-Racing Game/Pods-Racing Game.debug.xcconfig"; sourceTree = "<group>"; };
+		E8A26FCAF43E660F74A6B54F /* Pods-Racing Game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Racing Game.release.xcconfig"; path = "Target Support Files/Pods-Racing Game/Pods-Racing Game.release.xcconfig"; sourceTree = "<group>"; };
 		FD4D9EEE28B4251A00A3D850 /* RubikDirt-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RubikDirt-Regular.ttf"; sourceTree = "<group>"; };
 		FD716B6528B6AC81004CCC25 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		FD716B8728BCD1AB004CCC25 /* HighscoresTableViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresTableViewCells.swift; sourceTree = "<group>"; };
@@ -37,6 +42,7 @@
 		FDB2889628214E7900E94824 /* HighscoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreTableViewController.swift; sourceTree = "<group>"; };
 		FDB2889828214EB600E94824 /* RaceGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceGameViewController.swift; sourceTree = "<group>"; };
 		FDB2889A28214ECE00E94824 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FDF3003528C257CC00D572EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FDFE01D728BF94AD00A45A77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FDFE01D928BF950A00A45A77 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -46,12 +52,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D012DF33023035C42BA9F87 /* Pods_Racing_Game.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		93B4D1507091226EFD14BFC4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5B1E8F806339237F60697E29 /* Pods-Racing Game.debug.xcconfig */,
+				E8A26FCAF43E660F74A6B54F /* Pods-Racing Game.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FD4D9EEB28B4201800A3D850 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -60,11 +76,21 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		FDA57A0724B5D77535C6BBDD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27D5825C5ACB78B8D359D3A8 /* Pods_Racing_Game.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FDB2887428214E5300E94824 = {
 			isa = PBXGroup;
 			children = (
 				FDB2887F28214E5300E94824 /* Racing Game */,
 				FDB2887E28214E5300E94824 /* Products */,
+				93B4D1507091226EFD14BFC4 /* Pods */,
+				FDA57A0724B5D77535C6BBDD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +116,7 @@
 				FDB2888928214E5500E94824 /* Assets.xcassets */,
 				FDB2888B28214E5500E94824 /* LaunchScreen.storyboard */,
 				FDB2888E28214E5500E94824 /* Info.plist */,
+				FDF3003528C257CC00D572EA /* GoogleService-Info.plist */,
 				FD716B6528B6AC81004CCC25 /* Results.swift */,
 				FD716B8728BCD1AB004CCC25 /* HighscoresTableViewCells.swift */,
 				FDFE01D828BF94AD00A45A77 /* Localizable.strings */,
@@ -104,9 +131,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FDB2889128214E5500E94824 /* Build configuration list for PBXNativeTarget "Racing Game" */;
 			buildPhases = (
+				CF94DB7CD296584B64A33F88 /* [CP] Check Pods Manifest.lock */,
 				FDB2887928214E5300E94824 /* Sources */,
 				FDB2887A28214E5300E94824 /* Frameworks */,
 				FDB2887B28214E5300E94824 /* Resources */,
+				8053D650AF7F3E359F8F4308 /* [CP] Embed Pods Frameworks */,
+				FDF3003728C2598200D572EA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -161,10 +191,72 @@
 				FDFE01D628BF94AD00A45A77 /* Localizable.strings in Resources */,
 				FDB2888A28214E5500E94824 /* Assets.xcassets in Resources */,
 				FDB2888828214E5300E94824 /* Main.storyboard in Resources */,
+				FDF3003628C257CC00D572EA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8053D650AF7F3E359F8F4308 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Racing Game/Pods-Racing Game-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Racing Game/Pods-Racing Game-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Racing Game/Pods-Racing Game-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF94DB7CD296584B64A33F88 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Racing Game-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDF3003728C2598200D572EA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FDB2887928214E5300E94824 /* Sources */ = {
@@ -333,11 +425,13 @@
 		};
 		FDB2889228214E5500E94824 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B1E8F806339237F60697E29 /* Pods-Racing Game.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Racing Game/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -354,12 +448,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		FDB2889328214E5500E94824 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8A26FCAF43E660F74A6B54F /* Pods-Racing Game.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -381,7 +476,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

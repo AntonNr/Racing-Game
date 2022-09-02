@@ -10,6 +10,13 @@ class MainMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //проверка Crashlytics
+        let button = UIButton(type: .roundedRect)
+              button.frame = CGRect(x: 50, y: 200, width: 100, height: 30)
+              button.setTitle("Test Crash", for: [])
+              button.addTarget(self, action: #selector(self.crashButtonTapped(_:)), for: .touchUpInside)
+              view.addSubview(button)
+        
         localizedString()
         
         let attributed: [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor : UIColor.red, NSAttributedString.Key.font : UIFont(name: "RubikDirt-Regular", size: 40) as Any]
@@ -56,10 +63,15 @@ class MainMenuViewController: UIViewController {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
+    @IBAction func crashButtonTapped(_ sender: AnyObject) {
+          let numbers = [0]
+          let _ = numbers[1]
+      }
+    
     func localizedString() {
-        startButton.titleLabel?.text = NSLocalizedString("main_menu_play_button", comment: "")
-        highscoresButton.titleLabel?.text = NSLocalizedString("main_menu_highscores_button", comment: "")
-        settingsButton.titleLabel?.text = NSLocalizedString("main_menu_settings_button", comment: "")
+        startButton.setTitle(NSLocalizedString("main_menu_play_button", comment: ""), for: .normal)
+        highscoresButton.setTitle(NSLocalizedString("main_menu_highscores_button", comment: ""), for: .normal)
+        settingsButton.setTitle(NSLocalizedString("main_menu_settings_button", comment: ""), for: .normal)
     }
 }
 
