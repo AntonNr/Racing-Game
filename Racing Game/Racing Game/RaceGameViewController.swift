@@ -4,6 +4,8 @@ class RaceGameViewController: UIViewController {
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var distanceLabel: UILabel!
     
+    var serviceHighscores = HighscoresService()
+    
     var road1: UIImageView = UIImageView()
     var road2: UIImageView = UIImageView()
     var obstacle: UIImageView = UIImageView()
@@ -93,8 +95,7 @@ class RaceGameViewController: UIViewController {
                 self.view.willRemoveSubview(self.obstacle)
                 self.timer?.invalidate()
                 self.roadTimer?.invalidate()
-                self.saveRecord()
-                //UserDefaults.standard.reset()
+                UserDefaults.standard.reset()
                 
                 let alert = UIAlertController(title: "Game Over", message: "", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Menu", style: .cancel, handler: {
@@ -173,16 +174,27 @@ class RaceGameViewController: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
-    func saveRecord() {
-        var records: [Results] = []
+    func saveRecordRealm() {
+        
+        let currentRecord: Highscore = Highscore(name: UserDefaults.standard.object(forKey: UserDefaults.Keys.racerName.rawValue) as? String ?? "DefaultName", date: Date(), distance: roundedDistance, score: score)
+        
+        let recordArray = HighscoresArray()
+        recordArray.highscoresArray.append(currentRecord)
+        
+        serviceHighscores.saveHighscoresArray(highscoresArray: recordArray)
+        
+    }
+    
+    func saveRecordUserDefaults() {
+        var records: [ResultsHighscores] = []
         
         if let recordsData = UserDefaults.standard.data(forKey: UserDefaults.Keys.records.rawValue) {
-            if let oldRecords: [Results] = try? JSONDecoder().decode(Array<Results>.self, from: recordsData) {
+            if let oldRecords: [ResultsHighscores] = try? JSONDecoder().decode(Array<ResultsHighscores>.self, from: recordsData) {
                 records = oldRecords
             }
         }
         
-        let currentRecord = Results(name: UserDefaults.standard.object(forKey: UserDefaults.Keys.racerName.rawValue) as? String ?? "DefaultName", date: Date(), distance: roundedDistance, score: score)
+        let currentRecord = ResultsHighscores(name: UserDefaults.standard.object(forKey: UserDefaults.Keys.racerName.rawValue) as? String ?? "DefaultName", date: Date(), distance: roundedDistance, score: score)
         
         records.append(currentRecord)
         let recordsData = try? JSONEncoder().encode(records)

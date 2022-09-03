@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D012DF33023035C42BA9F87 /* Pods_Racing_Game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D5825C5ACB78B8D359D3A8 /* Pods_Racing_Game.framework */; };
 		FD4D9EEF28B4251A00A3D850 /* RubikDirt-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD4D9EEE28B4251A00A3D850 /* RubikDirt-Regular.ttf */; };
-		FD716B6628B6AC81004CCC25 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD716B6528B6AC81004CCC25 /* Results.swift */; };
+		FD716B6628B6AC81004CCC25 /* ResultsHighscores.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD716B6528B6AC81004CCC25 /* ResultsHighscores.swift */; };
 		FD716B8828BCD1AB004CCC25 /* HighscoresTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD716B8728BCD1AB004CCC25 /* HighscoresTableViewCells.swift */; };
 		FDB2888128214E5300E94824 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2888028214E5300E94824 /* AppDelegate.swift */; };
 		FDB2888328214E5300E94824 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2888228214E5300E94824 /* SceneDelegate.swift */; };
@@ -21,6 +21,9 @@
 		FDB2889928214EB600E94824 /* RaceGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2889828214EB600E94824 /* RaceGameViewController.swift */; };
 		FDB2889B28214ECE00E94824 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2889A28214ECE00E94824 /* SettingsViewController.swift */; };
 		FDF3003628C257CC00D572EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDF3003528C257CC00D572EA /* GoogleService-Info.plist */; };
+		FDF3003A28C3797B00D572EA /* Highscore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF3003928C3797B00D572EA /* Highscore.swift */; };
+		FDF3003C28C39C5500D572EA /* HighscoresArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF3003B28C39C5500D572EA /* HighscoresArray.swift */; };
+		FDF3003F28C39F0E00D572EA /* HighscoresService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF3003E28C39F0E00D572EA /* HighscoresService.swift */; };
 		FDFE01D628BF94AD00A45A77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDFE01D828BF94AD00A45A77 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +32,7 @@
 		5B1E8F806339237F60697E29 /* Pods-Racing Game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Racing Game.debug.xcconfig"; path = "Target Support Files/Pods-Racing Game/Pods-Racing Game.debug.xcconfig"; sourceTree = "<group>"; };
 		E8A26FCAF43E660F74A6B54F /* Pods-Racing Game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Racing Game.release.xcconfig"; path = "Target Support Files/Pods-Racing Game/Pods-Racing Game.release.xcconfig"; sourceTree = "<group>"; };
 		FD4D9EEE28B4251A00A3D850 /* RubikDirt-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RubikDirt-Regular.ttf"; sourceTree = "<group>"; };
-		FD716B6528B6AC81004CCC25 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		FD716B6528B6AC81004CCC25 /* ResultsHighscores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsHighscores.swift; sourceTree = "<group>"; };
 		FD716B8728BCD1AB004CCC25 /* HighscoresTableViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresTableViewCells.swift; sourceTree = "<group>"; };
 		FDB2887D28214E5300E94824 /* Racing Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Racing Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDB2888028214E5300E94824 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +46,9 @@
 		FDB2889828214EB600E94824 /* RaceGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceGameViewController.swift; sourceTree = "<group>"; };
 		FDB2889A28214ECE00E94824 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FDF3003528C257CC00D572EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FDF3003928C3797B00D572EA /* Highscore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highscore.swift; sourceTree = "<group>"; };
+		FDF3003B28C39C5500D572EA /* HighscoresArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresArray.swift; sourceTree = "<group>"; };
+		FDF3003E28C39F0E00D572EA /* HighscoresService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresService.swift; sourceTree = "<group>"; };
 		FDFE01D728BF94AD00A45A77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FDFE01D928BF950A00A45A77 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				FD4D9EEB28B4201800A3D850 /* Fonts */,
+				FDF3003D28C39DCE00D572EA /* Services */,
+				FDF3003828C3796600D572EA /* Entity Realm */,
 				FDB2888028214E5300E94824 /* AppDelegate.swift */,
 				FDB2888228214E5300E94824 /* SceneDelegate.swift */,
 				FDB2888428214E5300E94824 /* MainMenuViewContoller.swift */,
@@ -117,11 +125,28 @@
 				FDB2888B28214E5500E94824 /* LaunchScreen.storyboard */,
 				FDB2888E28214E5500E94824 /* Info.plist */,
 				FDF3003528C257CC00D572EA /* GoogleService-Info.plist */,
-				FD716B6528B6AC81004CCC25 /* Results.swift */,
+				FD716B6528B6AC81004CCC25 /* ResultsHighscores.swift */,
 				FD716B8728BCD1AB004CCC25 /* HighscoresTableViewCells.swift */,
 				FDFE01D828BF94AD00A45A77 /* Localizable.strings */,
 			);
 			path = "Racing Game";
+			sourceTree = "<group>";
+		};
+		FDF3003828C3796600D572EA /* Entity Realm */ = {
+			isa = PBXGroup;
+			children = (
+				FDF3003928C3797B00D572EA /* Highscore.swift */,
+				FDF3003B28C39C5500D572EA /* HighscoresArray.swift */,
+			);
+			path = "Entity Realm";
+			sourceTree = "<group>";
+		};
+		FDF3003D28C39DCE00D572EA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FDF3003E28C39F0E00D572EA /* HighscoresService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,10 +291,13 @@
 				FDB2889B28214ECE00E94824 /* SettingsViewController.swift in Sources */,
 				FDB2888528214E5300E94824 /* MainMenuViewContoller.swift in Sources */,
 				FD716B8828BCD1AB004CCC25 /* HighscoresTableViewCells.swift in Sources */,
+				FDF3003F28C39F0E00D572EA /* HighscoresService.swift in Sources */,
+				FDF3003A28C3797B00D572EA /* Highscore.swift in Sources */,
 				FDB2889928214EB600E94824 /* RaceGameViewController.swift in Sources */,
-				FD716B6628B6AC81004CCC25 /* Results.swift in Sources */,
+				FD716B6628B6AC81004CCC25 /* ResultsHighscores.swift in Sources */,
 				FDB2889728214E7900E94824 /* HighscoreTableViewController.swift in Sources */,
 				FDB2888128214E5300E94824 /* AppDelegate.swift in Sources */,
+				FDF3003C28C39C5500D572EA /* HighscoresArray.swift in Sources */,
 				FDB2888328214E5300E94824 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

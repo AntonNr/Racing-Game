@@ -9,6 +9,7 @@ target 'Racing Game' do
   pod 'FirebaseCore'
   pod 'FirebaseMessaging'
   pod 'FirebaseCrashlytics'
+  pod 'RealmSwift'
 
   # Pods for Racing Game
 

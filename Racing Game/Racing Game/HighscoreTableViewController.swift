@@ -4,7 +4,9 @@ class HighscoreTableViewContoller: UIViewController, UITableViewDelegate, UITabl
 
     @IBOutlet var highscoresLabel: UILabel!
     @IBOutlet var tableView: UITableView!
-    var records: [Results] = []
+    
+    var serviceHighscores = HighscoresService()
+    var records:[Highscore] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +29,11 @@ class HighscoreTableViewContoller: UIViewController, UITableViewDelegate, UITabl
     }
     
     func loadSavedData() {
-        if let recordsData = UserDefaults.standard.data(forKey: UserDefaults.Keys.records.rawValue) {
-            if let recordsResults: [Results] = try? JSONDecoder().decode(Array<Results>.self, from: recordsData) {
-                for record in recordsResults {
-                    records.append(record)
-                }
-            }
+        
+        let highscoresArray = serviceHighscores.getHighscores()
+        
+        for record in highscoresArray {
+            records.append(record)
         }
     }
     

@@ -1,7 +1,9 @@
+// MARK: Main Menu
 "main_menu_play_button" = "Start";
 "main_menu_highscores_button" = "Highscores";
 "main_menu_settings_button" = "Settings";
 
+// MARK: Settings
 "settings_save_button" = "Save";
 "settings_yellow_car_button" = "Yellow";
 "settings_green_car_button" = "Green";
@@ -12,6 +14,8 @@
 "settings_car_label" = "Car";
 "settings_obstacle_type_label" = "Obstacle Type";
 
+// MARK: Highscores
 "highscores_label" = "Highscores";
 
+// MARK: Generals
 "back_button" = "Back";

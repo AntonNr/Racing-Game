@@ -1,7 +1,9 @@
+// MARK: Main Menu
 "main_menu_play_button" = "Играть";
 "main_menu_highscores_button" = "Рекорды";
 "main_menu_settings_button" = "Настройки";
 
+// MARK: Settings
 "settings_save_button" = "Сохранить";
 "settings_yellow_car_button" = "Жёлтый";
 "settings_green_car_button" = "Зелёный";
@@ -12,6 +14,8 @@
 "settings_car_label" = "Машина";
 "settings_obstacle_type_label" = "Тип препятствия";
 
+// MARK: Highscores
 "highscores_label" = "Рекорды";
 
+// MARK: Generals
 "back_button" = "Назад";
