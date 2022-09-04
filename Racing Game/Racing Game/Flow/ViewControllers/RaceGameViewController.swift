@@ -1,6 +1,8 @@
 import UIKit
 
 class RaceGameViewController: UIViewController {
+    
+    //MARK: Properties
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var distanceLabel: UILabel!
     
@@ -19,6 +21,7 @@ class RaceGameViewController: UIViewController {
     var timerToCompare: Timer?
     var timerToCarJump: Timer?
     
+    //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,6 +59,7 @@ class RaceGameViewController: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
+    //MARK: Moving functions
     @objc func moveBush() {
         let screenWidth = UIScreen.main.bounds.width
         let screenHeight = UIScreen.main.bounds.height
@@ -95,7 +99,8 @@ class RaceGameViewController: UIViewController {
                 self.view.willRemoveSubview(self.obstacle)
                 self.timer?.invalidate()
                 self.roadTimer?.invalidate()
-                UserDefaults.standard.reset()
+                self.saveRecordRealm()
+                //UserDefaults.standard.reset()
                 
                 let alert = UIAlertController(title: "Game Over", message: "", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Menu", style: .cancel, handler: {
@@ -170,13 +175,32 @@ class RaceGameViewController: UIViewController {
         }
     }
     
-    @objc func didTapClose() {
-        self.navigationController?.popToRootViewController(animated: true)
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            
+            let carOriginYPozition = car.frame.origin.y
+            car.frame.origin.y += 50
+            
+            timerToCarJump = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: false, block: { _ in
+                if self.car.frame.origin.y != carOriginYPozition {
+                    self.car.frame.origin.y -= 4
+                }
+            })
+        }
     }
     
+    func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    //MARK: Save record functions
     func saveRecordRealm() {
         
-        let currentRecord: Highscore = Highscore(name: UserDefaults.standard.object(forKey: UserDefaults.Keys.racerName.rawValue) as? String ?? "DefaultName", date: Date(), distance: roundedDistance, score: score)
+        let currentRecord: Highscore = Highscore()
+        currentRecord.racerName = UserDefaults.standard.object(forKey: UserDefaults.Keys.racerName.rawValue) as? String ?? "DefaultName"
+        currentRecord.date = Date()
+        currentRecord.distance = roundedDistance
+        currentRecord.score = score
         
         let recordArray = HighscoresArray()
         recordArray.highscoresArray.append(currentRecord)
@@ -207,22 +231,9 @@ class RaceGameViewController: UIViewController {
         print(dateFormatter.string(from: currentRecord.date))
     }
     
-    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        if motion == .motionShake {
-            
-            let carOriginYPozition = car.frame.origin.y
-            car.frame.origin.y += 50
-            
-            timerToCarJump = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: false, block: { _ in
-                if self.car.frame.origin.y != carOriginYPozition {
-                    self.car.frame.origin.y -= 4
-                }
-            })
-        }
-    }
-    
-    func canBecomeFirstResponder() -> Bool {
-        return true
+    //MARK: Others
+    @objc func didTapClose() {
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
 }

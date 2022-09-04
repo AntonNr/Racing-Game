@@ -74,6 +74,29 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		FD2EA74928C4C5F300B3DDC5 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				FD2EA74A28C4C60700B3DDC5 /* ViewControllers */,
+				FDF3003828C3796600D572EA /* Entity Realm */,
+				FDF3003D28C39DCE00D572EA /* Services */,
+				FD716B6528B6AC81004CCC25 /* ResultsHighscores.swift */,
+				FD716B8728BCD1AB004CCC25 /* HighscoresTableViewCells.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		FD2EA74A28C4C60700B3DDC5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FDB2888428214E5300E94824 /* MainMenuViewContoller.swift */,
+				FDB2889828214EB600E94824 /* RaceGameViewController.swift */,
+				FDB2889628214E7900E94824 /* HighscoreTableViewController.swift */,
+				FDB2889A28214ECE00E94824 /* SettingsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		FD4D9EEB28B4201800A3D850 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,22 +134,15 @@
 		FDB2887F28214E5300E94824 /* Racing Game */ = {
 			isa = PBXGroup;
 			children = (
+				FD2EA74928C4C5F300B3DDC5 /* Flow */,
 				FD4D9EEB28B4201800A3D850 /* Fonts */,
-				FDF3003D28C39DCE00D572EA /* Services */,
-				FDF3003828C3796600D572EA /* Entity Realm */,
 				FDB2888028214E5300E94824 /* AppDelegate.swift */,
 				FDB2888228214E5300E94824 /* SceneDelegate.swift */,
-				FDB2888428214E5300E94824 /* MainMenuViewContoller.swift */,
-				FDB2889828214EB600E94824 /* RaceGameViewController.swift */,
-				FDB2889628214E7900E94824 /* HighscoreTableViewController.swift */,
-				FDB2889A28214ECE00E94824 /* SettingsViewController.swift */,
 				FDB2888628214E5300E94824 /* Main.storyboard */,
 				FDB2888928214E5500E94824 /* Assets.xcassets */,
 				FDB2888B28214E5500E94824 /* LaunchScreen.storyboard */,
 				FDB2888E28214E5500E94824 /* Info.plist */,
 				FDF3003528C257CC00D572EA /* GoogleService-Info.plist */,
-				FD716B6528B6AC81004CCC25 /* ResultsHighscores.swift */,
-				FD716B8728BCD1AB004CCC25 /* HighscoresTableViewCells.swift */,
 				FDFE01D828BF94AD00A45A77 /* Localizable.strings */,
 			);
 			path = "Racing Game";

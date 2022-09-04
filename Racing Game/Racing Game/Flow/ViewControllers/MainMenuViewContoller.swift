@@ -2,11 +2,13 @@ import UIKit
 
 class MainMenuViewController: UIViewController {
 
+    //MARK: Properties
     @IBOutlet var mainLabel: UILabel!
     @IBOutlet var startButton: UIButton!
     @IBOutlet var highscoresButton: UIButton!
     @IBOutlet var settingsButton: UIButton!
     
+    //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +35,7 @@ class MainMenuViewController: UIViewController {
         settingsButton.drawShadow()
     }
 
+    //MARK: IBActions
     @IBAction func didTapStart(){
         let str: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = str.instantiateViewController(withIdentifier: "RaceGameViewController") as! RaceGameViewController
@@ -75,6 +78,7 @@ class MainMenuViewController: UIViewController {
     }
 }
 
+//MARK: Extension
 extension UIButton {
     func cornerRadius(radius: Int) {
         self.layer.cornerRadius = CGFloat(radius)
