@@ -34,7 +34,8 @@ class RaceGameViewController: UIViewController {
             car.image = UIImage(named: "Yellow Car")
         case "Green":
             car.image = UIImage(named: "Green Car")
-        default: break
+        default:
+            car.image = UIImage(named: "Yellow Car")
         }
         
         car.frame = CGRect(x: UIScreen.main.bounds.width / 2 + 45, y: UIScreen.main.bounds.height - 300, width: 75, height: 150)
@@ -77,21 +78,25 @@ class RaceGameViewController: UIViewController {
         switch obstacleType {
         case "Bush": obstacle.image = UIImage(named: "Bush")
         case "Cone": obstacle.image = UIImage(named: "Cone")
-        default: break
+        default:
+            obstacle.image = UIImage(named: "Bush")
         }
         
         obstacle.frame = CGRect(x: randomPositionOfBush, y: -128, width: 150, height: 150)
         obstacle.layer.zPosition = -1
         self.view.addSubview(obstacle)
         
-        timerToCompare = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true, block: {
-            timerToCompare in
+        timerToCompare = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true, block: { [weak self] timerToCompare in
+            
+            guard let self = self else { return }
+            
             self.obstacle.frame.origin.y += 4
+            
+            self.scoreLabel.text = NSLocalizedString("race_score_label", comment: "") + "\(self.score)"
             
             if self.obstacle.frame.minY > screenHeight {
                 timerToCompare.invalidate()
                 self.score += 1
-                self.scoreLabel.text = "Score: \(self.score)"
             }
             
             if self.obstacle.frame.intersects(self.car.frame) {
@@ -100,15 +105,14 @@ class RaceGameViewController: UIViewController {
                 self.timer?.invalidate()
                 self.roadTimer?.invalidate()
                 self.saveRecordRealm()
-                //UserDefaults.standard.reset()
                 
-                let alert = UIAlertController(title: "Game Over", message: "", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Menu", style: .cancel, handler: {
+                let alert = UIAlertController(title: NSLocalizedString("race_alert_intersects_title", comment: ""), message: "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("race_alert_intersects_button1", comment: ""), style: .cancel, handler: {
                     _ in
                     self.navigationController?.popToRootViewController(animated: true)
                 }))
                 
-                alert.addAction(UIAlertAction(title: "Try Again", style: .default, handler: {
+                alert.addAction(UIAlertAction(title: NSLocalizedString("race_alert_intersects_button2", comment: ""), style: .default, handler: {
                     _ in
                     self.moveBush()
                     self.timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.moveBush), userInfo: nil, repeats: true)
@@ -130,7 +134,10 @@ class RaceGameViewController: UIViewController {
         road2.layer.zPosition = -2
         self.view.addSubview(road2)
         
-        roadTimer = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { _ in
+        roadTimer = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { [weak self] _ in
+            
+            guard let self = self else { return }
+            
             var currentCenterRoad2 = self.road2.center
             currentCenterRoad2.y += 4
             self.road2.center = currentCenterRoad2
@@ -147,7 +154,7 @@ class RaceGameViewController: UIViewController {
             
             self.distance += 0.01
             self.roundedDistance = round(self.distance * 10) / 10.0
-            self.distanceLabel.text = "Distance: \(self.roundedDistance)"
+            self.distanceLabel.text = NSLocalizedString("race_distance_label", comment: "") + "\(self.roundedDistance)"
         }
         
     }

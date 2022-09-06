@@ -1,4 +1,5 @@
 import UIKit
+import RealmSwift
 
 class HighscoreTableViewContoller: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -6,7 +7,8 @@ class HighscoreTableViewContoller: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet var tableView: UITableView!
     
     var serviceHighscores = HighscoresService()
-    var records:[Highscore] = []
+    var records: [Highscore] = []
+    var recordsSettings: Results<Highscore>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,7 @@ class HighscoreTableViewContoller: UIViewController, UITableViewDelegate, UITabl
     func loadSavedData() {
         
         let highscoresArray = serviceHighscores.getHighscores()
+        recordsSettings = highscoresArray
         
         for record in highscoresArray {
             records.append(record)
@@ -38,7 +41,7 @@ class HighscoreTableViewContoller: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        records.count
+        recordsSettings?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,10 +51,14 @@ class HighscoreTableViewContoller: UIViewController, UITableViewDelegate, UITabl
             dateFormatter.dateStyle = .medium
             dateFormatter.timeStyle = .short
             
-            cell.nameLabel.text = records[indexPath.row].racerName
-            cell.dateLabel.text = dateFormatter.string(from: records[indexPath.row].date)
-            cell.scoreLabel.text = String(records[indexPath.row].score) + ","
-            cell.distanceLabel.text = String(records[indexPath.row].distance) + " м"
+            if let record = recordsSettings?[indexPath.row] {
+                
+                cell.nameLabel.text = record.racerName
+                cell.dateLabel.text = dateFormatter.string(from: record.date)
+                cell.scoreLabel.text = String(record.score) + ","
+                cell.distanceLabel.text = String(record.distance) + " м"
+            
+            }
             
             return cell
         }

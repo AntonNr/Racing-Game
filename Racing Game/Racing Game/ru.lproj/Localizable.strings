@@ -3,6 +3,13 @@
 "main_menu_highscores_button" = "Рекорды";
 "main_menu_settings_button" = "Настройки";
 
+// MARK: Race
+"race_score_label" = "Счёт: ";
+"race_alert_intersects_title" = "Конец Игры";
+"race_alert_intersects_button1" = "Меню";
+"race_alert_intersects_button2" = "Заново";
+"race_distance_label" = "Дистанция: ";
+
 // MARK: Settings
 "settings_save_button" = "Сохранить";
 "settings_yellow_car_button" = "Жёлтый";

@@ -3,6 +3,13 @@
 "main_menu_highscores_button" = "Highscores";
 "main_menu_settings_button" = "Settings";
 
+// MARK: Race
+"race_score_label" = "Score: ";
+"race_alert_intersects_title" = "Game Over";
+"race_alert_intersects_button1" = "Menu";
+"race_alert_intersects_button2" = "Try Again";
+"race_distance_label" = "Distance: ";
+
 // MARK: Settings
 "settings_save_button" = "Save";
 "settings_yellow_car_button" = "Yellow";
