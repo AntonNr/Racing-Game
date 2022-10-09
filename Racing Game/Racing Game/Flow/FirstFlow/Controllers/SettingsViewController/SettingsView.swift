@@ -37,7 +37,8 @@ class SettingsView: UIView {
     }
     
     func localizedStrings() {
-        saveButton.titleLabel?.text = NSLocalizedString("settings_save_button", comment: "")
+        saveButton.setTitle(NSLocalizedString("settings_save_button", comment: ""), for: .normal)
+        resetButton.setTitle(NSLocalizedString("settings_reset_records_button", comment: ""), for: .normal)
         settingsLabel.text = NSLocalizedString("settings_label", comment: "")
         racerNameLabel.text = NSLocalizedString("settings_racer_name_label", comment: "")
         carLabel.text = NSLocalizedString("settings_car_label", comment: "")

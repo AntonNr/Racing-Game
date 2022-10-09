@@ -12,6 +12,7 @@
 
 // MARK: Settings
 "settings_save_button" = "Сохранить";
+"settings_reset_records_button" = "Удалить рекорды";
 "settings_yellow_car_button" = "Жёлтый";
 "settings_green_car_button" = "Зелёный";
 "settings_bush_button" = "Куст";
