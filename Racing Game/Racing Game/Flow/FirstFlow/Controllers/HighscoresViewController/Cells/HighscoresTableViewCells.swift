@@ -8,5 +8,4 @@ class HighscoresTableViewCells: UITableViewCell {
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var distanceLabel: UILabel!
     
-    
 }

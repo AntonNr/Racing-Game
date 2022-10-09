@@ -5,10 +5,10 @@
 
 // MARK: Race
 "race_score_label" = "Счёт: ";
-"race_alert_intersects_title" = "Конец Игры";
+"race_distance_label" = "Дистанция: ";
+"race_alert_intersects_title" = "Конец игры";
 "race_alert_intersects_button1" = "Меню";
 "race_alert_intersects_button2" = "Заново";
-"race_distance_label" = "Дистанция: ";
 
 // MARK: Settings
 "settings_save_button" = "Сохранить";
@@ -17,7 +17,7 @@
 "settings_bush_button" = "Куст";
 "settings_cone_button" = "Конус";
 "settings_label" = "Настройки";
-"settings_rider_name_label" = "Имя гонщика";
+"settings_racer_name_label" = "Имя гонщика";
 "settings_car_label" = "Машина";
 "settings_obstacle_type_label" = "Тип препятствия";
 

@@ -11,6 +11,13 @@
 		FD4D9EEF28B4251A00A3D850 /* RubikDirt-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD4D9EEE28B4251A00A3D850 /* RubikDirt-Regular.ttf */; };
 		FD716B6628B6AC81004CCC25 /* ResultsHighscores.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD716B6528B6AC81004CCC25 /* ResultsHighscores.swift */; };
 		FD716B8828BCD1AB004CCC25 /* HighscoresTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD716B8728BCD1AB004CCC25 /* HighscoresTableViewCells.swift */; };
+		FD7A355228EAF2EF00148E7A /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7A355128EAF2EF00148E7A /* MainMenuView.swift */; };
+		FD7A355528EB38A400148E7A /* RaceGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7A355428EB38A400148E7A /* RaceGameView.swift */; };
+		FD7A355728EC9EB400148E7A /* RaceGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7A355628EC9EB400148E7A /* RaceGameModel.swift */; };
+		FD7A355928EDBF1E00148E7A /* HighscoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7A355828EDBF1E00148E7A /* HighscoresView.swift */; };
+		FD7A355B28EDDE7E00148E7A /* HighscoresModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7A355A28EDDE7E00148E7A /* HighscoresModel.swift */; };
+		FD7A355D28EDE3F200148E7A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7A355C28EDE3F200148E7A /* SettingsView.swift */; };
+		FD7A356028EDE61100148E7A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7A355F28EDE61100148E7A /* Extensions.swift */; };
 		FDB2888128214E5300E94824 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2888028214E5300E94824 /* AppDelegate.swift */; };
 		FDB2888328214E5300E94824 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2888228214E5300E94824 /* SceneDelegate.swift */; };
 		FDB2888528214E5300E94824 /* MainMenuViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2888428214E5300E94824 /* MainMenuViewContoller.swift */; };
@@ -34,6 +41,13 @@
 		FD4D9EEE28B4251A00A3D850 /* RubikDirt-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RubikDirt-Regular.ttf"; sourceTree = "<group>"; };
 		FD716B6528B6AC81004CCC25 /* ResultsHighscores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsHighscores.swift; sourceTree = "<group>"; };
 		FD716B8728BCD1AB004CCC25 /* HighscoresTableViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresTableViewCells.swift; sourceTree = "<group>"; };
+		FD7A355128EAF2EF00148E7A /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		FD7A355428EB38A400148E7A /* RaceGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceGameView.swift; sourceTree = "<group>"; };
+		FD7A355628EC9EB400148E7A /* RaceGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceGameModel.swift; sourceTree = "<group>"; };
+		FD7A355828EDBF1E00148E7A /* HighscoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresView.swift; sourceTree = "<group>"; };
+		FD7A355A28EDDE7E00148E7A /* HighscoresModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresModel.swift; sourceTree = "<group>"; };
+		FD7A355C28EDE3F200148E7A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FD7A355F28EDE61100148E7A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FDB2887D28214E5300E94824 /* Racing Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Racing Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDB2888028214E5300E94824 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDB2888228214E5300E94824 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,27 +88,26 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		FD2EA74928C4C5F300B3DDC5 /* Flow */ = {
+		FD2EA74928C4C5F300B3DDC5 /* FirstFlow */ = {
 			isa = PBXGroup;
 			children = (
-				FD2EA74A28C4C60700B3DDC5 /* ViewControllers */,
-				FDF3003828C3796600D572EA /* Entity Realm */,
 				FDF3003D28C39DCE00D572EA /* Services */,
-				FD716B6528B6AC81004CCC25 /* ResultsHighscores.swift */,
-				FD716B8728BCD1AB004CCC25 /* HighscoresTableViewCells.swift */,
+				FDF3003828C3796600D572EA /* Entity Realm */,
+				FD2EA74A28C4C60700B3DDC5 /* Controllers */,
+				FD7A355E28EDE5F300148E7A /* Extensions */,
 			);
-			path = Flow;
+			path = FirstFlow;
 			sourceTree = "<group>";
 		};
-		FD2EA74A28C4C60700B3DDC5 /* ViewControllers */ = {
+		FD2EA74A28C4C60700B3DDC5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FDB2888428214E5300E94824 /* MainMenuViewContoller.swift */,
-				FDB2889828214EB600E94824 /* RaceGameViewController.swift */,
-				FDB2889628214E7900E94824 /* HighscoreTableViewController.swift */,
-				FDB2889A28214ECE00E94824 /* SettingsViewController.swift */,
+				FD7A354B28EAF12700148E7A /* MainMenuViewController */,
+				FD7A354C28EAF14000148E7A /* RaceGameViewController */,
+				FD7A354D28EAF15500148E7A /* HighscoresViewController */,
+				FD7A354E28EAF16B00148E7A /* SettingsViewController */,
 			);
-			path = ViewControllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		FD4D9EEB28B4201800A3D850 /* Fonts */ = {
@@ -103,6 +116,69 @@
 				FD4D9EEE28B4251A00A3D850 /* RubikDirt-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FD7A354B28EAF12700148E7A /* MainMenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FD7A355128EAF2EF00148E7A /* MainMenuView.swift */,
+				FDB2888428214E5300E94824 /* MainMenuViewContoller.swift */,
+			);
+			path = MainMenuViewController;
+			sourceTree = "<group>";
+		};
+		FD7A354C28EAF14000148E7A /* RaceGameViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FD7A355428EB38A400148E7A /* RaceGameView.swift */,
+				FDB2889828214EB600E94824 /* RaceGameViewController.swift */,
+				FD7A355628EC9EB400148E7A /* RaceGameModel.swift */,
+			);
+			path = RaceGameViewController;
+			sourceTree = "<group>";
+		};
+		FD7A354D28EAF15500148E7A /* HighscoresViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FD7A354F28EAF1CC00148E7A /* Cells */,
+				FD7A355828EDBF1E00148E7A /* HighscoresView.swift */,
+				FDB2889628214E7900E94824 /* HighscoreTableViewController.swift */,
+				FD7A355A28EDDE7E00148E7A /* HighscoresModel.swift */,
+			);
+			path = HighscoresViewController;
+			sourceTree = "<group>";
+		};
+		FD7A354E28EAF16B00148E7A /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FD7A355C28EDE3F200148E7A /* SettingsView.swift */,
+				FDB2889A28214ECE00E94824 /* SettingsViewController.swift */,
+			);
+			path = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		FD7A354F28EAF1CC00148E7A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FD716B8728BCD1AB004CCC25 /* HighscoresTableViewCells.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FD7A355028EAF1E600148E7A /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				FD2EA74928C4C5F300B3DDC5 /* FirstFlow */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		FD7A355E28EDE5F300148E7A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FD7A355F28EDE61100148E7A /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FDA57A0724B5D77535C6BBDD /* Frameworks */ = {
@@ -134,7 +210,7 @@
 		FDB2887F28214E5300E94824 /* Racing Game */ = {
 			isa = PBXGroup;
 			children = (
-				FD2EA74928C4C5F300B3DDC5 /* Flow */,
+				FD7A355028EAF1E600148E7A /* Flow */,
 				FD4D9EEB28B4201800A3D850 /* Fonts */,
 				FDB2888028214E5300E94824 /* AppDelegate.swift */,
 				FDB2888228214E5300E94824 /* SceneDelegate.swift */,
@@ -153,6 +229,7 @@
 			children = (
 				FDF3003928C3797B00D572EA /* Highscore.swift */,
 				FDF3003B28C39C5500D572EA /* HighscoresArray.swift */,
+				FD716B6528B6AC81004CCC25 /* ResultsHighscores.swift */,
 			);
 			path = "Entity Realm";
 			sourceTree = "<group>";
@@ -304,14 +381,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD7A355B28EDDE7E00148E7A /* HighscoresModel.swift in Sources */,
+				FD7A356028EDE61100148E7A /* Extensions.swift in Sources */,
 				FDB2889B28214ECE00E94824 /* SettingsViewController.swift in Sources */,
 				FDB2888528214E5300E94824 /* MainMenuViewContoller.swift in Sources */,
 				FD716B8828BCD1AB004CCC25 /* HighscoresTableViewCells.swift in Sources */,
 				FDF3003F28C39F0E00D572EA /* HighscoresService.swift in Sources */,
+				FD7A355D28EDE3F200148E7A /* SettingsView.swift in Sources */,
+				FD7A355728EC9EB400148E7A /* RaceGameModel.swift in Sources */,
 				FDF3003A28C3797B00D572EA /* Highscore.swift in Sources */,
 				FDB2889928214EB600E94824 /* RaceGameViewController.swift in Sources */,
+				FD7A355928EDBF1E00148E7A /* HighscoresView.swift in Sources */,
+				FD7A355228EAF2EF00148E7A /* MainMenuView.swift in Sources */,
 				FD716B6628B6AC81004CCC25 /* ResultsHighscores.swift in Sources */,
 				FDB2889728214E7900E94824 /* HighscoreTableViewController.swift in Sources */,
+				FD7A355528EB38A400148E7A /* RaceGameView.swift in Sources */,
 				FDB2888128214E5300E94824 /* AppDelegate.swift in Sources */,
 				FDF3003C28C39C5500D572EA /* HighscoresArray.swift in Sources */,
 				FDB2888328214E5300E94824 /* SceneDelegate.swift in Sources */,

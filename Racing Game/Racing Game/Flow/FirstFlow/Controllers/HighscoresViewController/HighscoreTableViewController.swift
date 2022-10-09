@@ -1,47 +1,29 @@
 import UIKit
-import RealmSwift
 
 class HighscoreTableViewContoller: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet var highscoresLabel: UILabel!
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet var rootView: HighscoresView!
     
-    var serviceHighscores = HighscoresService()
-    var records: [Highscore] = []
-    var recordsSettings: Results<Highscore>?
+    var highscoresModel = HighscoresModel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        localizedString()
+        rootView.localizedString()
+        rootView.decorate()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        rootView.tableView.delegate = self
+        rootView.tableView.dataSource = self
         
-        loadSavedData()
+        highscoresModel.loadSavedData()
         
-        tableView.reloadData()
+        rootView.tableView.reloadData()
         
-        let rootScreen = UIBarButtonItem(title: NSLocalizedString("back_button", comment: ""), style: .done, target: self, action: #selector(didTapClose))
-        navigationItem.leftBarButtonItem = rootScreen
-    }
-
-    @objc func didTapClose(){
-        self.navigationController?.popToRootViewController(animated: true)
-    }
-    
-    func loadSavedData() {
-        
-        let highscoresArray = serviceHighscores.getHighscores()
-        recordsSettings = highscoresArray
-        
-        for record in highscoresArray {
-            records.append(record)
-        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        recordsSettings?.count ?? 0
+        highscoresModel.recordsSettings?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,7 +33,7 @@ class HighscoreTableViewContoller: UIViewController, UITableViewDelegate, UITabl
             dateFormatter.dateStyle = .medium
             dateFormatter.timeStyle = .short
             
-            if let record = recordsSettings?[indexPath.row] {
+            if let record = highscoresModel.recordsSettings?[indexPath.row] {
                 
                 cell.nameLabel.text = record.racerName
                 cell.dateLabel.text = dateFormatter.string(from: record.date)
@@ -60,14 +42,12 @@ class HighscoreTableViewContoller: UIViewController, UITableViewDelegate, UITabl
             
             }
             
+            cell.backgroundColor = .systemYellow
+            
             return cell
         }
         
         return UITableViewCell()
-    }
-    
-    func localizedString() {
-        NSLocalizedString("highscores_label", comment: "")
     }
     
 }

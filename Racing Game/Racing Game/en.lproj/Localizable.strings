@@ -5,10 +5,10 @@
 
 // MARK: Race
 "race_score_label" = "Score: ";
+"race_distance_label" = "Distance: ";
 "race_alert_intersects_title" = "Game Over";
 "race_alert_intersects_button1" = "Menu";
 "race_alert_intersects_button2" = "Try Again";
-"race_distance_label" = "Distance: ";
 
 // MARK: Settings
 "settings_save_button" = "Save";
@@ -17,7 +17,7 @@
 "settings_bush_button" = "Bush";
 "settings_cone_button" = "Cone";
 "settings_label" = "Settings";
-"settings_rider_name_label" = "Rider Name";
+"settings_racer_name_label" = "Rider Name";
 "settings_car_label" = "Car";
 "settings_obstacle_type_label" = "Obstacle Type";
 
